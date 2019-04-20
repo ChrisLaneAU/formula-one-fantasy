@@ -14,4 +14,5 @@
 #
 
 class Driver < ApplicationRecord
+  belongs_to :constructor
 end
