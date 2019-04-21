@@ -1,3 +1,5 @@
+# PERMANENT DATA
+
 Constructor.destroy_all
 c1 = Constructor.create :name => "Ferrari", :value => 29.0
 c2 = Constructor.create :name => "Mercedes", :value => 32.2
@@ -32,7 +34,22 @@ d18 = Driver.create :name => "George Russell", :nationality => "British", :value
 d19 = Driver.create :name => "Alex Albon", :nationality => "Thai", :value => 6.7
 d20 = Driver.create :name => "Daniil Kvyat", :nationality => "Russian", :value => 5.7
 
-# Associations ############################################################
+# TEST DATA
+
+Fantasy.destroy_all
+f1 = Fantasy.create :name => "Team One"
+f2 = Fantasy.create :name => "Team Two"
+
+Race.destroy_all
+r1 = Race.create :country => "Australia"
+
+Position.destroy_all
+p1 = Position.create :_1 => "Sebastian Vettel", :_2 => "Lewis Hamilton"
+
+User.destroy_all
+u1 = User.create :name => "Chris", :email => "chris@ga.co", :password => "chicken"
+
+# ASSOCIATIONS ############################################################
 # Constructors and Drivers
 c1.drivers << d1 << d2
 c2.drivers << d3 << d4
@@ -45,5 +62,19 @@ c8.drivers << d15 << d16
 c9.drivers << d17 << d18
 c10.drivers << d19 << d20
 
-# d1.constructors << c1
-# d3.constructors << c2
+# Drivers and Fantasies
+f1.drivers << d1 << d2 << d3
+f2.drivers << d18 << d19 << d20
+
+# Fantasies and Races
+r1.fantasies << f1 << f2
+
+# Fantasies and Constructors
+c1.fantasies << f1 << f2
+c5.fantasies << f2
+
+# Drivers and Positions
+p1.drivers << d1 << d2 << d3 << d4 << d5
+
+# Users and Fantasies
+u1.fantasies << f1 << f2

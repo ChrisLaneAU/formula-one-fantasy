@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_20_121345) do
+ActiveRecord::Schema.define(version: 2019_04_21_054644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 2019_04_20_121345) do
     t.bigint "driver_id", null: false
   end
 
+  create_table "constructors_fantasies", force: :cascade do |t|
+    t.integer "constructor_id"
+    t.integer "fantasy_id"
+  end
+
   create_table "drivers", force: :cascade do |t|
     t.text "name"
     t.text "nationality"
@@ -40,6 +45,16 @@ ActiveRecord::Schema.define(version: 2019_04_20_121345) do
     t.integer "fantasy_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "drivers_fantasies", force: :cascade do |t|
+    t.integer "driver_id"
+    t.integer "fantasy_id"
+  end
+
+  create_table "drivers_positions", force: :cascade do |t|
+    t.integer "driver_id"
+    t.integer "position_id"
   end
 
   create_table "fantasies", force: :cascade do |t|
@@ -52,6 +67,16 @@ ActiveRecord::Schema.define(version: 2019_04_20_121345) do
     t.integer "constructor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "fantasies_races", force: :cascade do |t|
+    t.integer "fantasy_id"
+    t.integer "race_id"
+  end
+
+  create_table "fantasies_users", force: :cascade do |t|
+    t.integer "fantasy_id"
+    t.integer "user_id"
   end
 
   create_table "positions", force: :cascade do |t|

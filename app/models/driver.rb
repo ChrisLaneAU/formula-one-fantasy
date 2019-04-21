@@ -14,5 +14,7 @@
 #
 
 class Driver < ApplicationRecord
-  belongs_to :constructor
+  belongs_to :constructor, :optional => true
+  has_and_belongs_to_many :fantasies
+  has_and_belongs_to_many :positions, through: :races
 end

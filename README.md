@@ -10,6 +10,14 @@ A Ruby on Rails web app that simulates the 2019 Formula 1 Fantasy league.
 
 ![Site Map](https://github.com/ChrisLaneAU/formula-one-fantasy/blob/master/app/assets/images/Formula-1-Fantasy-Site-Map.jpeg?raw=true "Site Map")
 
+### Thanks
+
+Thanks to **Joel**, **Yianni** and **Ben** for Rails assistance
+Thanks also to:
+
+- **Luke** for the Lucid Charts recommendation
+- **Adrian** for Fantasy League idea
+
 ## Ruby README
 
 This README would normally document whatever steps are necessary to get the
