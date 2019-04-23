@@ -1,0 +1,19 @@
+<h1>Race: <%= @race.country %></h1>
+
+<h3>Fantasy Teams:</h3>
+<% @race.fantasy_ids.each do |id| %>
+  <p><%= Fantasy.find(id).name %> with <%= Fantasy.find(id).points %> points (User: <%= User.find(Fantasy.find(id).user_id).name %>)</p>
+<% end %>
+
+<h3>Positions: </h3>
+<% @driver_positions.each_with_index do |d_id, i| %>
+  <p><%= (i + 1).ordinalize %>: <%= Driver.find(d_id).name %></p>
+<% end %>
+
+<%= form_for @race do |f| %>
+  <%= f.label :flag %>
+  <%= f.text_field :flag, :autofocus => true %>
+  <%= f.submit %>
+<% end %>
+
+<h3><%= @race.flag %></h3>

@@ -15,4 +15,5 @@
 
 class Race < ApplicationRecord
   has_and_belongs_to_many :fantasies
+  has_one :position
 end

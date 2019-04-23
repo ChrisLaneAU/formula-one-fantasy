@@ -37,17 +37,18 @@ d20 = Driver.create :name => "Daniil Kvyat", :nationality => "Russian", :value =
 # TEST DATA
 
 Fantasy.destroy_all
-f1 = Fantasy.create :name => "Team One"
-f2 = Fantasy.create :name => "Team Two"
+f1 = Fantasy.create :name => "Team One", :points => 0
+f2 = Fantasy.create :name => "Team Two", :points => 0
 
 Race.destroy_all
 r1 = Race.create :country => "Australia"
 
 Position.destroy_all
-p1 = Position.create :_1 => "Sebastian Vettel", :_2 => "Lewis Hamilton"
+p1 = Position.create
 
 User.destroy_all
 u1 = User.create :name => "Chris", :email => "chris@ga.co", :password => "chicken"
+u2 = User.create :name => "Jane", :email => "jane@ga.co", :password => "chicken"
 
 # ASSOCIATIONS ############################################################
 # Constructors and Drivers
@@ -77,4 +78,8 @@ c5.fantasies << f2
 p1.drivers << d1 << d2 << d3 << d4 << d5
 
 # Users and Fantasies
-u1.fantasies << f1 << f2
+u1.fantasies << f1
+u2.fantasies << f2
+
+# Races and Positions
+p1.races << r1
