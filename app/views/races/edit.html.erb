@@ -20,6 +20,7 @@
       <% end %>
 
       <%= form_for @race do |f| %>
+        <%= f.hidden_field :flag %>
         <%= f.submit "Reset"%>
       <% end %>
     </div>
