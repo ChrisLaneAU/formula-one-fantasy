@@ -1,5 +1,10 @@
-<h1>All Fantasy Teams</h1>
+<h1>Fantasy Teams</h1>
 
 <% @fantasy_teams.each do |team| %>
-  <p><%= team.name %> [<%= team.id %>]</p>
+  <% if team.user_id == @current_user.id %>
+    <%= link_to team.name, edit_fantasy_path(team.id) %>
+  <% end %>
 <% end %>
+
+<h3>Options:</h3>
+<%= link_to "Create New Fantasy Team", new_fantasy_path %>

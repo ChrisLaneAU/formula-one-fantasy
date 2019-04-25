@@ -1,0 +1,14 @@
+<h1>Edit Fantasy Team <%= @team_values %></h1>
+
+<p>Budget: $<%= @fantasy_team.budget %>m</p>
+<p>Points: <%= @fantasy_team.points %></p>
+
+<%= render :partial => "form" %>
+
+<% @constructors.each do |c| %>
+  <p><%= c.value %></p>
+<% end %>
+
+<% @drivers.each do |d| %>
+  <p><%= d.value %></p>
+<% end %>

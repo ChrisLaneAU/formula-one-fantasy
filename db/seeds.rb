@@ -41,7 +41,27 @@ f1 = Fantasy.create :name => "Team One", :points => 0
 f2 = Fantasy.create :name => "Team Two", :points => 0
 
 Race.destroy_all
-r1 = Race.create :country => "Australia"
+r1 = Race.create :country => "Australia", :flag => "https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.9.0/flags/4x3/au.svg"
+r2 = Race.create :country => "Bahrain"
+r3 = Race.create :country => "China"
+r4 = Race.create :country => "Azerbaijan"
+r5 = Race.create :country => "Spain"
+r6 = Race.create :country => "Monaco"
+r7 = Race.create :country => "Canada"
+r8 = Race.create :country => "France"
+r9 = Race.create :country => "Austria"
+r10 = Race.create :country => "Great Britain"
+r11 = Race.create :country => "Germany"
+r12 = Race.create :country => "Hungary"
+r13 = Race.create :country => "Belgium"
+r14 = Race.create :country => "Italy"
+r15 = Race.create :country => "Singapore"
+r16 = Race.create :country => "Russia"
+r17 = Race.create :country => "Japan"
+r18 = Race.create :country => "Medico"
+r19 = Race.create :country => "United States"
+r20 = Race.create :country => "Brazil"
+r21 = Race.create :country => "Abu Dhabi"
 
 Position.destroy_all
 p1 = Position.create
@@ -67,6 +87,10 @@ c10.drivers << d19 << d20
 f1.drivers << d1 << d2 << d3
 f2.drivers << d18 << d19 << d20
 
+# Constructors and Fantasies
+#f1.constructors << c1
+#f2.constructors << c2
+
 # Fantasies and Races
 r1.fantasies << f1 << f2
 
@@ -75,7 +99,7 @@ c1.fantasies << f1 << f2
 c5.fantasies << f2
 
 # Drivers and Positions
-p1.drivers << d1 << d2 << d3 << d4 << d5
+p1.drivers << d1 << d2 << d3 << d4 << d5 << d6 << d7 << d8 << d9 << d10 << d11 << d12 << d13 << d14 << d15 << d16 << d17 << d18 << d19 << d20
 
 # Users and Fantasies
 u1.fantasies << f1

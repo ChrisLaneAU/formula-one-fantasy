@@ -1,3 +1,11 @@
-<h1>Race: <%= @race.country %></h1>
+<h1><%= @race.country %></h1>
 
-<%= link_to "Start Race", edit_race_path(@race) %>
+<div class="team-select-container">
+  <h3>Choose your fantasy team </h3>
+  <%= form_for @race do |f| %>
+    <%= f.collection_radio_buttons(:fantasy_ids, @fantasy_teams, :id, :name) do |c| %>
+      <%= c.label(class:"team-select-container-label") { c.radio_button + c.text } %>
+    <% end %>
+    <%= f.submit "Start Race", :class => "team-select-container-btn" %>
+  <% end %>
+</div>

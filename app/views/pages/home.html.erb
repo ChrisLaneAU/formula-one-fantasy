@@ -2,4 +2,7 @@
 
 <% if @current_user.present? %>
   <h2>Hello <%= @current_user.email %></h2>
+  <% if @current_user.image.present? %>
+  <%= image_tag @current_user.image %>
+  <% end %>
 <% end %>

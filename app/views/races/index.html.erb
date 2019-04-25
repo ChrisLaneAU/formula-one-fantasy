@@ -1,2 +1,5 @@
-<h1>Races#index</h1>
-<p>Find me in app/views/races/index.html.erb</p>
+<h1>2019 F1 Races</h1>
+
+<% @races.each do |r| %>
+  <%= link_to r.country, race_path(r), :class => "race-select" %>
+<% end %>

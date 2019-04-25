@@ -1,0 +1,22 @@
+<%= form_for @fantasy_team do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true, :required => true %>
+
+  <%= f.label :image, "Photo" %>
+  <%= f.text_field :image, :placeholder => "http://..." %>
+
+  <%= f.label :constructor_id, "Choose 1 Constructor" %>
+  <%= f.collection_radio_buttons(:constructor_id, Constructor.all, :id, :name) do |c| %>
+    <%= c.label(class:"display-block") { c.radio_button + c.text } %>
+  <% end %>
+
+  <%= f.label :driver_ids, "Choose 5 Drivers" %>
+  <%= f.collection_check_boxes(:driver_ids, Driver.all, :id, :name) do |d| %>
+    <%= d.label(class:"display-block") { d.check_box + d.text } %>
+  <% end %>
+
+  <%= f.submit "Save Team" %>
+  <%= link_to "Cancel", fantasies_path %>
+
+<% end %>

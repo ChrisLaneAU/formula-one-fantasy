@@ -1,6 +1,5 @@
-<h1>Your Fantasy Teams</h1>
 <% @fantasy_teams.each do |team| %>
-  <p>Name: <%= team.name %></p>
+  <h1>Name: <%= team.name %></h1>
   <% team.driver_ids.each do |driver_id| %>
   <ul>
     <li><%= Driver.find(driver_id).name %></li>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_22_110848) do
+ActiveRecord::Schema.define(version: 2019_04_24_062410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,13 +60,13 @@ ActiveRecord::Schema.define(version: 2019_04_22_110848) do
   create_table "fantasies", force: :cascade do |t|
     t.text "name"
     t.text "image"
-    t.float "budget"
-    t.integer "points"
     t.integer "user_id"
     t.integer "driver_id"
     t.integer "constructor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "budget", default: 100.0
+    t.integer "points", default: 0
   end
 
   create_table "fantasies_races", force: :cascade do |t|
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(version: 2019_04_22_110848) do
     t.integer "fantasy_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "budget", default: 100.0
   end
 
 end

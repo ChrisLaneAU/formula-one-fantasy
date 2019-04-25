@@ -1,3 +1,172 @@
 // Place all the styles related to the Races controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  overflow-x: hidden;
+}
+
+//////////////////
+// SELECT RACE
+//////////////////
+
+.race-select {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 1em 3.5em;
+  max-width: 15em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em auto;
+  border: 2px solid var(--color-red);
+  background-color: #fefefe;
+  color: var(--color-red);
+  transition: all 0.4s ease;
+
+  &:hover {
+    background-color: var(--color-red);
+    color: #fefefe;
+  }
+}
+
+//////////////////
+// SELECT TEAM
+//////////////////
+
+.team-select-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 5em min-content 4em;
+  justify-items: center;
+  align-items: center;
+
+  & h3 {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  & form {
+    grid-row: 2;
+    grid-column: 2;
+
+    & input[type="radio"] {
+      display: none;
+    }
+  }
+
+  &-label {
+    display: block;
+    border: 2px solid var(--color-red);
+    padding: 1.3em 2.5em;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #fff;
+    color: var(--color-red);
+    transition: all 0.4s;
+
+    &:hover {
+      background-color: var(--color-red);
+      color: #fff;
+    }
+  }
+
+  &-btn {
+    outline: none;
+    margin: 3em auto;
+    font-size: 1em;
+    padding: 1em 2.1em;
+    background-color: #fff;
+    color: var(--color-red);
+    border-radius: 5em;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 10px rgba(#000, 0.3);
+    }
+  }
+}
+
+.label-active {
+  background-color: var(--color-red);
+  color: #fff;
+}
+
+/////////////////
+// EDIT RACE
+/////////////////
+
+.timer {
+  width: 7em;
+}
+
+.edit-race {
+  margin: 0 auto;
+}
+
+.codepen-border {
+  box-sizing: border-box;
+  display: inline;
+  width: 100%;
+  height: 640px;
+  position: absolute;
+  width: 80%;
+  border: 80px solid #fff;
+  background-color: transparent;
+}
+
+.race-edit-container {
+  padding: 2em;
+  position: relative;
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 17em 1fr;
+
+  &-menu {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 17em;
+    height: 100%;
+    background-color: #f8f8f8;
+
+    display: flex;
+    flex-direction: column;
+
+    & h3 {
+      background-color: #ebebeb;
+      text-align: center;
+      padding: 0.6em 0;
+      margin-bottom: 0.5em;
+    }
+
+    & p {
+      margin-bottom: 0.4em;
+      margin-left: 1.5em;
+    }
+
+    &-teams {
+      margin-bottom: 2em;
+      width: 100%;
+
+      align-self: center;
+    }
+
+    &-positions {
+      width: 100%;
+      align-self: center;
+    }
+  }
+
+  &-track {
+    grid-row: 1 / 2;
+    grid-column: 2;
+  }
+}

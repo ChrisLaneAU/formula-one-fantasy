@@ -1,0 +1,8 @@
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true, :required => true %>
+  <%= f.label :image, "Photo" %>
+  <%= f.text_field :image, :placeholder => "http://..." %>
+  <%= f.submit "Save Profile" %>
+  <%= link_to "Cancel", root_path %>
+<% end %>

@@ -1,19 +1,34 @@
-<h1>Race: <%= @race.country %></h1>
+<h1><%= @race.country %> &nbsp;:: &nbsp; <span class="timer"></span></h1>
 
-<h3>Fantasy Teams:</h3>
-<% @race.fantasy_ids.each do |id| %>
-  <p><%= Fantasy.find(id).name %> with <%= Fantasy.find(id).points %> points (User: <%= User.find(Fantasy.find(id).user_id).name %>)</p>
-<% end %>
 
-<h3>Positions: </h3>
-<% @driver_positions.each_with_index do |d_id, i| %>
-  <p><%= (i + 1).ordinalize %>: <%= Driver.find(d_id).name %></p>
-<% end %>
+<div class="race-edit-container">
+  <div class="race-edit-container-menu">
+    <div class="race-edit-container-menu-teams">
+      <h3>Fantasy Teams</h3>
+      <% @race.fantasy_ids.each do |id| %>
+        <p>
+          <strong><%= Fantasy.find(id).name %>:</strong>
+          <%= Fantasy.find(id).points %> points
+        </p>
+      <% end %>
+    </div>
 
-<%= form_for @race do |f| %>
-  <%= f.label :flag %>
-  <%= f.text_field :flag, :autofocus => true %>
-  <%= f.submit %>
-<% end %>
+    <div class="race-edit-container-menu-positions">
+      <h3>Positions</h3>
+      <% $driver_positions.each_with_index do |d_id, i| %>
+        <p><strong><%= (i + 1).ordinalize %>:</strong> <%= Driver.find(d_id).name %></p>
+      <% end %>
 
-<h3><%= @race.flag %></h3>
+      <%= form_for @race do |f| %>
+        <%= f.submit "Reset"%>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="race-edit-container-track">
+    <div class="codepen-border"></div>
+    <p class="codepen" data-height="601" data-theme-id="light" data-default-tab="result" data-user="chrislaneau" data-slug-hash="jRQwgG" style="height: 601px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; margin: 1em 0; padding: 1em;" data-pen-title="jRQwgG">
+    </p>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script></div>
+  </div>
+</div>
