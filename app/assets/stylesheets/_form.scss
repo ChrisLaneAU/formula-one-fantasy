@@ -1,0 +1,63 @@
+.profile-container form,
+.login form,
+.signup form {
+  max-width: 35em;
+  margin: 2em auto;
+  padding-right: 10%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 4em);
+  grid-column-gap: 2em;
+
+  & label {
+    font-weight: 500;
+    margin-top: 0.4em;
+    justify-self: end;
+  }
+
+  & input[type="text"],
+  & input[type="email"],
+  & input[type="password"] {
+    outline: none;
+    font-size: 1em;
+    height: 2em;
+    border: none;
+    border-bottom: 1px solid var(--color-red);
+    transition: all 0.3s;
+
+    &:focus {
+      border-bottom: 2px solid var(--color-red);
+    }
+
+    &:valid {
+      border-bottom: 2px solid var(--color-green);
+    }
+  }
+
+  & a,
+  & input[type="submit"] {
+    margin: 0.3em;
+    text-decoration: none;
+    justify-self: end;
+    outline: none;
+    font-size: 1em;
+    padding: 1em 2.1em;
+    background-color: #fff;
+    color: var(--color-red);
+    border-radius: 5em;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 10px rgba(#000, 0.3);
+    }
+  }
+
+  & a {
+    background-color: var(--color-red);
+    color: #fff;
+    justify-self: center;
+  }
+}

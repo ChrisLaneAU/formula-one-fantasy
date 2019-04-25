@@ -2,11 +2,13 @@
 
 <%= flash[:error] %>
 
-<%= form_tag login_path do %>
-  <%= label_tag :email %>
-  <%= email_field_tag :email %>
+<div class="login">
+  <%= form_tag login_path do %>
+    <%= label_tag :email %>
+    <%= email_field_tag :email, nil, :autofocus => true, :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Log In" %>
-<% end %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password, nil, :required => true %>
+    <%= submit_tag "Log In", :class => "submit login-submit" %>
+  <% end %>
+</div>

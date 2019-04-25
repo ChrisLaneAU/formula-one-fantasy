@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.profile-container {
-  display: flex;
-  flex-direction: column;
+.signup-submit {
+  grid-column: 1 / -1;
+  justify-self: center !important;
+  margin-left: 34% !important;
 }
