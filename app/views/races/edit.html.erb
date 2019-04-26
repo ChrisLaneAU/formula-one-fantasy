@@ -1,6 +1,5 @@
 <h1><%= @race.country %> &nbsp;:: &nbsp; <span class="timer"></span></h1>
 
-
 <div class="race-edit-container">
   <div class="race-edit-container-menu">
     <div class="race-edit-container-menu-teams">
@@ -21,7 +20,7 @@
 
       <%= form_for @race do |f| %>
         <%= f.hidden_field :flag %>
-        <%= f.submit "Reset"%>
+        <%= f.submit "End Race"%>
       <% end %>
     </div>
   </div>

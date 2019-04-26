@@ -6,14 +6,14 @@
   <%= f.label :image, "Photo" %>
   <%= f.text_field :image, :placeholder => "http://..." %>
 
-  <%= f.label :constructor_id, "Choose 1 Constructor" %>
+  <%= f.label :constructor_id, "Choose 1 Constructor", :class => "create-fantasy-team-label-constructor" %>
   <%= f.collection_radio_buttons(:constructor_id, Constructor.all, :id, :name) do |c| %>
-    <%= c.label(class:"display-block") { c.radio_button + c.text } %>
+    <%= c.label(class:"display-block create-fantasy-team-label create-fantasy-team-label-radio") { c.radio_button + c.text } %>
   <% end %>
 
-  <%= f.label :driver_ids, "Choose 5 Drivers" %>
+  <%= f.label :driver_ids, "Choose 5 Drivers", :class => "create-fantasy-team-label-drivers" %>
   <%= f.collection_check_boxes(:driver_ids, Driver.all, :id, :name) do |d| %>
-    <%= d.label(class:"display-block") { d.check_box + d.text } %>
+    <%= d.label(class:"display-block create-fantasy-team-label create-fantasy-team-label-check") { d.check_box + d.text } %>
   <% end %>
 
   <%= f.submit "Save Team" %>

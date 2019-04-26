@@ -1,10 +1,16 @@
 <h1>Fantasy Teams</h1>
 
-<% @fantasy_teams.each do |team| %>
-  <% if team.user_id == @current_user.id %>
-    <%= link_to team.name, edit_fantasy_path(team.id) %>
+<div class="fantasy-teams-container">
+  <% @fantasy_teams.each do |team| %>
+    <% if team.user_id == @current_user.id %>
+      <div class="fantasy-teams-container-team">
+        <%= link_to team.name, edit_fantasy_path(team.id), :class => "fantasy-teams-container-team-name" %>
+        <% team.driver_ids.each do |d_id| %>
+          <%= link_to Driver.find(d_id).name, edit_fantasy_path(team.id), :class => "fantasy-teams-container-team-driver" %>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
 
-<h3>Options:</h3>
-<%= link_to "Create New Fantasy Team", new_fantasy_path %>
+  <%= link_to "Create New Fantasy Team", new_fantasy_path, :class => "fantasy-teams-container-team fantasy-teams-container-team-new" %>
+</div>

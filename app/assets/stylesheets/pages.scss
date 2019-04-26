@@ -66,6 +66,13 @@ h1 {
   justify-content: center;
 }
 
+.home {
+  height: calc(100vh - 10em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero {
   height: calc(100vh - 10em);
   background-image: url("hero.jpg");
