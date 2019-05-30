@@ -34,7 +34,7 @@ Thanks also to:
 - **Luke** for the Lucid Charts recommendation
 - **Adrian** for Fantasy League idea
 
-## TODO
+### TODO
 
 - Add prices and budget when creating teams
 - Create all tracks (currently only Australia exists)
