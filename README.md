@@ -2,6 +2,22 @@
 
 A Ruby on Rails web app that simulates the 2019 Formula 1 Fantasy league.
 
+### Demo
+
+[Demo](https://f1-fantasy-chris-lane.herokuapp.com/)
+
+### Tech Stack
+
+Ruby on Rails + jQuery + GSAP
+
+### Home Page
+
+![Home Page](https://github.com/ChrisLaneAU/formula-one-fantasy/blob/master/app/assets/images/Formula-1-home-page.png?raw=true "Home Page")
+
+### Game Play
+
+![Game Play](https://github.com/ChrisLaneAU/formula-one-fantasy/blob/master/app/assets/images/Formula-1-game-play.png?raw=true "Game Play")
+
 ### Database Map
 
 ![Database Map](https://github.com/ChrisLaneAU/formula-one-fantasy/blob/master/app/assets/images/Formula-1-Fantasy-Database.jpeg?raw=true "Database Map")
@@ -18,27 +34,10 @@ Thanks also to:
 - **Luke** for the Lucid Charts recommendation
 - **Adrian** for Fantasy League idea
 
-## Ruby README
+## TODO
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-- Ruby version
-
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+- Add prices and budget when creating teams
+- Create all tracks (currently only Australia exists)
+- Fetch and display live timing data
+- Dynamically render cars on map based on live timing data
+- Update positions on leaderboard based on live timing data

@@ -1,16 +1,6 @@
 <h1>Edit Fantasy Team <%= @team_values %></h1>
 
 <div class="create-fantasy-team">
-  <h3>Budget: $<%= @fantasy_team.budget %>m</h3>
-  <h3>Points: <%= @fantasy_team.points %></h3>
 
   <%= render :partial => "form" %>
 </div>
-
-<% @constructors.each do |c| %>
-  <p><%= c.value %></p>
-<% end %>
-
-<% @drivers.each do |d| %>
-  <p><%= d.value %></p>
-<% end %>
